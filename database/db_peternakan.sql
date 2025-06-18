@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2018 at 05:42 PM
+-- Generation Time: Oct 30, 2025 at 05:42 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -41,9 +41,9 @@ CREATE TABLE `jadwalku` (
 
 INSERT INTO `jadwalku` (`jadwal_id`, `date`, `title`, `description`) VALUES
 (6, '2015-01-12 12:11:22', 'Tes', 'Tess'),
-(7, '2018-10-13 12:03:00', 'Pemberian Pakan', 'Pemberian pakan jagung'),
-(8, '2018-10-31 14:00:00', 'Pemberian Obat', 'Pemberian Obat Delatrin'),
-(9, '2018-08-08 06:00:00', 'Pemberian Pakan', 'Pemberian pakan dedak');
+(7, '2025-10-13 12:03:00', 'Pemberian Pakan', 'Pemberian pakan jagung'),
+(8, '2025-10-31 14:00:00', 'Pemberian Obat', 'Pemberian Obat Delatrin'),
+(9, '2025-08-08 06:00:00', 'Pemberian Pakan', 'Pemberian pakan dedak');
 
 -- --------------------------------------------------------
 
@@ -67,10 +67,10 @@ CREATE TABLE `stok_obat` (
 --
 
 INSERT INTO `stok_obat` (`obat_id`, `nama_obat`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`, `deskripsi`) VALUES
-(1, 'Delatrin', 12, 123, 1, '2018-10-29', '2018-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
-(2, 'Zaldes', 12, 123, 2, '2018-10-11', '2018-10-31', 'Desinfektan'),
-(3, 'ALBENOL-100 ORAL', 13, 124, 4, '2018-10-05', '2018-10-31', 'Untuk obat cacing'),
-(4, 'Paracetamol', 198, 123, 6, '2018-10-01', '2018-10-30', 'deskripsi\r\n                         ');
+(1, 'Delatrin', 12, 123, 1, '2025-10-29', '2025-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
+(2, 'Zaldes', 12, 123, 2, '2025-10-11', '2025-10-31', 'Desinfektan'),
+(3, 'ALBENOL-100 ORAL', 13, 124, 4, '2025-10-05', '2025-10-31', 'Untuk obat cacing'),
+(4, 'Paracetamol', 198, 123, 6, '2025-10-01', '2025-10-30', 'deskripsi\r\n                         ');
 
 -- --------------------------------------------------------
 
@@ -93,8 +93,8 @@ CREATE TABLE `stok_pakan` (
 --
 
 INSERT INTO `stok_pakan` (`pakan_id`, `nama_pakan`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`) VALUES
-(1, 'Jagung', 22, 123, 1, '2018-10-01', '2018-10-31'),
-(2, 'Bekatul', 200, 123, 2, '2018-10-01', '2019-04-05');
+(1, 'Jagung', 22, 123, 1, '2025-10-01', '2025-10-31'),
+(2, 'Bekatul', 200, 123, 2, '2025-10-01', '2019-04-05');
 
 -- --------------------------------------------------------
 
@@ -144,16 +144,16 @@ CREATE TABLE `tb_obat` (
 --
 
 INSERT INTO `tb_obat` (`id_obat`, `nama_obat`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`, `deskripsi`) VALUES
-(136, 'Delatrin', 20, 123, 1, '2018-10-05', '2018-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
-(137, 'Delatrin', 16, 125, 1, '2018-10-02', '2018-10-13', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
-(138, 'ALBENOL-100 ORAL', 100, 123, 4, '2018-10-04', '2018-10-31', '                \r\n                         Untuk Obat cacing                         '),
-(139, 'ALBENOL-100 ORAL', 30, 125, 4, '2018-10-04', '2018-10-19', '        \r\n                         Untuk obat cacing'),
-(140, 'INTERTRIM LA', 100, 123, 5, '2018-10-05', '2018-10-31', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
-(141, 'INTERTRIM LA', 17, 123, 5, '2018-10-05', '2018-10-12', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
-(142, 'Zaldes', 27, 123, 2, '2018-10-02', '2018-10-31', '        Desinfektan\r\n                         '),
-(143, 'Zaldes', 140, 125, 2, '2018-10-03', '2019-01-31', '        \r\n                         Desikfektan'),
-(144, 'Paracetamol', 20, 125, 6, '2018-10-04', '2018-11-01', ' Untuk obat demam\r\n                         '),
-(145, 'Paracetamol', 110, 124, 6, '2018-10-13', '2018-10-31', 'Untuk Obat demam');
+(136, 'Delatrin', 20, 123, 1, '2025-10-05', '2025-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
+(137, 'Delatrin', 16, 125, 1, '2025-10-02', '2025-10-13', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
+(138, 'ALBENOL-100 ORAL', 100, 123, 4, '2025-10-04', '2025-10-31', '                \r\n                         Untuk Obat cacing                         '),
+(139, 'ALBENOL-100 ORAL', 30, 125, 4, '2025-10-04', '2025-10-19', '        \r\n                         Untuk obat cacing'),
+(140, 'INTERTRIM LA', 100, 123, 5, '2025-10-05', '2025-10-31', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
+(141, 'INTERTRIM LA', 17, 123, 5, '2025-10-05', '2025-10-12', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
+(142, 'Zaldes', 27, 123, 2, '2025-10-02', '2025-10-31', '        Desinfektan\r\n                         '),
+(143, 'Zaldes', 140, 125, 2, '2025-10-03', '2019-01-31', '        \r\n                         Desikfektan'),
+(144, 'Paracetamol', 20, 125, 6, '2025-10-04', '2025-11-01', ' Untuk obat demam\r\n                         '),
+(145, 'Paracetamol', 110, 124, 6, '2025-10-13', '2025-10-31', 'Untuk Obat demam');
 
 -- --------------------------------------------------------
 
@@ -176,13 +176,13 @@ CREATE TABLE `tb_pakan` (
 --
 
 INSERT INTO `tb_pakan` (`id_pakan`, `nama_pakan`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`) VALUES
-(424, 'Jagung', 0, 123, 1, '2018-05-25', '2018-11-30'),
-(428, 'Dedak', 112, 123, 3, '2018-10-01', '2018-10-31'),
-(429, 'Jagung', 101, 123, 1, '2018-05-25', '2018-11-29'),
-(431, 'Jagung', 20, 123, 1, '2018-05-25', '2018-11-28'),
-(436, 'Bekatul', 131, 123, 2, '2018-10-05', '2018-10-31'),
-(437, 'Bekatul', 0, 122, 2, '2018-10-21', '2018-10-30'),
-(438, 'Jagung', 22, 124, 1, '2018-10-05', '2018-10-28');
+(424, 'Jagung', 0, 123, 1, '2025-05-25', '2025-11-30'),
+(428, 'Dedak', 112, 123, 3, '2025-10-01', '2025-10-31'),
+(429, 'Jagung', 101, 123, 1, '2025-05-25', '2025-11-29'),
+(431, 'Jagung', 20, 123, 1, '2025-05-25', '2025-11-28'),
+(436, 'Bekatul', 131, 123, 2, '2025-10-05', '2025-10-31'),
+(437, 'Bekatul', 0, 122, 2, '2025-10-21', '2025-10-30'),
+(438, 'Jagung', 22, 124, 1, '2025-10-05', '2025-10-28');
 
 -- --------------------------------------------------------
 
@@ -226,10 +226,10 @@ CREATE TABLE `tb_telur` (
 --
 
 INSERT INTO `tb_telur` (`id_telur`, `id_karyawan`, `jml_telur`, `berat`, `tanggal`) VALUES
-(1, 1221, 5652, 6.2, '2018-06-05'),
-(3, 1223, 34, 4.3, '2018-06-07'),
-(4, 1221, 39, 4.1, '2018-07-20'),
-(5, 1224, 100, 3.8, '2018-10-30');
+(1, 1221, 5652, 6.2, '2025-06-05'),
+(3, 1223, 34, 4.3, '2025-06-07'),
+(4, 1221, 39, 4.1, '2025-07-20'),
+(5, 1224, 100, 3.8, '2025-10-30');
 
 -- --------------------------------------------------------
 
@@ -250,6 +250,7 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id`, `username`, `password`, `nama`) VALUES
 (1, 'admin', 'a2960f70941d29b6123e6ebe493f38d2', 'Pak Ato');
+(2, 'admin1', 'd829b843a6550a947e82f2f38ed6b7a7', 'Pak Dani');
 
 -- --------------------------------------------------------
 
@@ -271,7 +272,7 @@ CREATE TABLE `ts_obat` (
 --
 
 INSERT INTO `ts_obat` (`kode_obat`, `id_obat`, `id_karyawan`, `jml_obat`, `tanggal`, `deskripsi`) VALUES
-(22, 138, 1222, 12, '2018-10-30', 'Untuk obat cacing');
+(22, 138, 1222, 12, '2025-10-30', 'Untuk obat cacing');
 
 -- --------------------------------------------------------
 
@@ -292,12 +293,12 @@ CREATE TABLE `ts_pakan` (
 --
 
 INSERT INTO `ts_pakan` (`kode_pakan`, `id_pakan`, `id_karyawan`, `jml_pakan`, `tanggal`) VALUES
-(135, 424, 1223, 10, '2018-06-26'),
-(137, 424, 1221, 13, '2018-10-09'),
-(138, 436, 1221, 23, '2018-10-06'),
-(139, 428, 1223, 12, '2018-10-20'),
-(140, 424, 1222, 100, '2018-10-20'),
-(141, 437, 1224, 100, '2018-10-27');
+(135, 424, 1223, 10, '2025-06-26'),
+(137, 424, 1221, 13, '2025-10-09'),
+(138, 436, 1221, 23, '2025-10-06'),
+(139, 428, 1223, 12, '2025-10-20'),
+(140, 424, 1222, 100, '2025-10-20'),
+(141, 437, 1224, 100, '2025-10-27');
 
 -- --------------------------------------------------------
 
