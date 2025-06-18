@@ -21,7 +21,7 @@ if(empty($_SESSION['username']) AND empty($_SESSION['password'])){
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SISTEM INFORMASI GUDANG ASMAHILL FARM</title>
+    <title>SISTEM INFORMASI GUDANG JOKO FARM</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -55,7 +55,7 @@ font-size: 16px;">  &nbsp; <a href="logout.php" class="btn btn-danger square-btn
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/asmahill.png" class="user-image img-responsive"/><br/>
+                    <img src="assets/img/logo.jpg" class="user-image img-responsive"/><br/>
                    <h4><font color="white">Selamat Datang <?php echo $_SESSION['nama']; ?>,</font></h4>    
 					</li>
          
@@ -150,9 +150,7 @@ font-size: 16px;">  &nbsp; <a href="logout.php" class="btn btn-danger square-btn
  <li>
                         <a  href="?page=data_akun"><i class="fa fa-users fa-3x"></i> Data Akun</a>
                     </li>
- <li>
-                        <a  href="?page=manual_book"><i class="fa fa-users fa-3x"></i> Manual Book</a>
-                    </li>
+
 
 
 
