@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2025 at 05:42 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 7.1.7
+-- Generation Time: Jun 18, 2025 at 06:33 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,7 +32,7 @@ CREATE TABLE `jadwalku` (
   `date` datetime NOT NULL,
   `title` text NOT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `jadwalku`
@@ -41,9 +40,9 @@ CREATE TABLE `jadwalku` (
 
 INSERT INTO `jadwalku` (`jadwal_id`, `date`, `title`, `description`) VALUES
 (6, '2015-01-12 12:11:22', 'Tes', 'Tess'),
-(7, '2025-10-13 12:03:00', 'Pemberian Pakan', 'Pemberian pakan jagung'),
-(8, '2025-10-31 14:00:00', 'Pemberian Obat', 'Pemberian Obat Delatrin'),
-(9, '2025-08-08 06:00:00', 'Pemberian Pakan', 'Pemberian pakan dedak');
+(7, '2018-10-13 12:03:00', 'Pemberian Pakan', 'Pemberian pakan jagung'),
+(8, '2018-10-31 14:00:00', 'Pemberian Obat', 'Pemberian Obat Delatrin'),
+(9, '2018-08-08 06:00:00', 'Pemberian Pakan', 'Pemberian pakan dedak');
 
 -- --------------------------------------------------------
 
@@ -60,17 +59,17 @@ CREATE TABLE `stok_obat` (
   `tgl_masuk` date NOT NULL,
   `tgl_kadaluarsa` date NOT NULL,
   `deskripsi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `stok_obat`
 --
 
 INSERT INTO `stok_obat` (`obat_id`, `nama_obat`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`, `deskripsi`) VALUES
-(1, 'Delatrin', 12, 123, 1, '2025-10-29', '2025-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
-(2, 'Zaldes', 12, 123, 2, '2025-10-11', '2025-10-31', 'Desinfektan'),
-(3, 'ALBENOL-100 ORAL', 13, 124, 4, '2025-10-05', '2025-10-31', 'Untuk obat cacing'),
-(4, 'Paracetamol', 198, 123, 6, '2025-10-01', '2025-10-30', 'deskripsi\r\n                         ');
+(1, 'Delatrin', 12, 123, 1, '2018-10-29', '2018-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
+(2, 'Zaldes', 12, 123, 2, '2018-10-11', '2018-10-31', 'Desinfektan'),
+(3, 'ALBENOL-100 ORAL', 13, 124, 4, '2018-10-05', '2018-10-31', 'Untuk obat cacing'),
+(4, 'Paracetamol', 198, 123, 6, '2018-10-01', '2018-10-30', 'deskripsi\r\n                         ');
 
 -- --------------------------------------------------------
 
@@ -86,15 +85,15 @@ CREATE TABLE `stok_pakan` (
   `id_kategori` int(11) NOT NULL,
   `tgl_masuk` date NOT NULL,
   `tgl_kadaluarsa` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `stok_pakan`
 --
 
 INSERT INTO `stok_pakan` (`pakan_id`, `nama_pakan`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`) VALUES
-(1, 'Jagung', 22, 123, 1, '2025-10-01', '2025-10-31'),
-(2, 'Bekatul', 200, 123, 2, '2025-10-01', '2019-04-05');
+(1, 'Jagung', 22, 123, 1, '2018-10-01', '2018-10-31'),
+(2, 'Bekatul', 200, 123, 2, '2018-10-01', '2019-04-05');
 
 -- --------------------------------------------------------
 
@@ -108,7 +107,7 @@ CREATE TABLE `tb_karyawan` (
   `alamat_karyawan` varchar(250) NOT NULL,
   `telepon_karyawan` varchar(14) NOT NULL,
   `jabatan_karyawan` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_karyawan`
@@ -137,23 +136,23 @@ CREATE TABLE `tb_obat` (
   `tgl_masuk` date NOT NULL,
   `tgl_kadaluarsa` date NOT NULL,
   `deskripsi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_obat`
 --
 
 INSERT INTO `tb_obat` (`id_obat`, `nama_obat`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`, `deskripsi`) VALUES
-(136, 'Delatrin', 20, 123, 1, '2025-10-05', '2025-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
-(137, 'Delatrin', 16, 125, 1, '2025-10-02', '2025-10-13', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
-(138, 'ALBENOL-100 ORAL', 100, 123, 4, '2025-10-04', '2025-10-31', '                \r\n                         Untuk Obat cacing                         '),
-(139, 'ALBENOL-100 ORAL', 30, 125, 4, '2025-10-04', '2025-10-19', '        \r\n                         Untuk obat cacing'),
-(140, 'INTERTRIM LA', 100, 123, 5, '2025-10-05', '2025-10-31', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
-(141, 'INTERTRIM LA', 17, 123, 5, '2025-10-05', '2025-10-12', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
-(142, 'Zaldes', 27, 123, 2, '2025-10-02', '2025-10-31', '        Desinfektan\r\n                         '),
-(143, 'Zaldes', 140, 125, 2, '2025-10-03', '2019-01-31', '        \r\n                         Desikfektan'),
-(144, 'Paracetamol', 20, 125, 6, '2025-10-04', '2025-11-01', ' Untuk obat demam\r\n                         '),
-(145, 'Paracetamol', 110, 124, 6, '2025-10-13', '2025-10-31', 'Untuk Obat demam');
+(136, 'Delatrin', 20, 123, 1, '2018-10-05', '2018-10-31', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
+(137, 'Delatrin', 16, 125, 1, '2018-10-02', '2018-10-13', 'Mencegah dan mengobati infestasi ektoparasit (kutu, tungau, caplak, lalat, dan kutu franky'),
+(138, 'ALBENOL-100 ORAL', 100, 123, 4, '2018-10-04', '2018-10-31', '                \r\n                         Untuk Obat cacing                         '),
+(139, 'ALBENOL-100 ORAL', 30, 125, 4, '2018-10-04', '2018-10-19', '        \r\n                         Untuk obat cacing'),
+(140, 'INTERTRIM LA', 100, 123, 5, '2018-10-05', '2018-10-31', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
+(141, 'INTERTRIM LA', 17, 123, 5, '2018-10-05', '2018-10-12', 'Pengobatan Infectious Coryza /Snot, Fowl Cholera, Colibacillosis, Salmonellosis dan malaria unggas '),
+(142, 'Zaldes', 27, 123, 2, '2018-10-02', '2018-10-31', '        Desinfektan\r\n                         '),
+(143, 'Zaldes', 140, 125, 2, '2018-10-03', '2019-01-31', '        \r\n                         Desikfektan'),
+(144, 'Paracetamol', 20, 125, 6, '2018-10-04', '2018-11-01', ' Untuk obat demam\r\n                         '),
+(145, 'Paracetamol', 110, 124, 6, '2018-10-13', '2018-10-31', 'Untuk Obat demam');
 
 -- --------------------------------------------------------
 
@@ -169,20 +168,20 @@ CREATE TABLE `tb_pakan` (
   `id_kategori` int(11) NOT NULL,
   `tgl_masuk` date NOT NULL,
   `tgl_kadaluarsa` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_pakan`
 --
 
 INSERT INTO `tb_pakan` (`id_pakan`, `nama_pakan`, `stok`, `id_suplier`, `id_kategori`, `tgl_masuk`, `tgl_kadaluarsa`) VALUES
-(424, 'Jagung', 0, 123, 1, '2025-05-25', '2025-11-30'),
-(428, 'Dedak', 112, 123, 3, '2025-10-01', '2025-10-31'),
-(429, 'Jagung', 101, 123, 1, '2025-05-25', '2025-11-29'),
-(431, 'Jagung', 20, 123, 1, '2025-05-25', '2025-11-28'),
-(436, 'Bekatul', 131, 123, 2, '2025-10-05', '2025-10-31'),
-(437, 'Bekatul', 0, 122, 2, '2025-10-21', '2025-10-30'),
-(438, 'Jagung', 22, 124, 1, '2025-10-05', '2025-10-28');
+(424, 'Jagung', 0, 123, 1, '2018-05-25', '2018-11-30'),
+(428, 'Dedak', 112, 123, 3, '2018-10-01', '2018-10-31'),
+(429, 'Jagung', 101, 123, 1, '2018-05-25', '2018-11-29'),
+(431, 'Jagung', 20, 123, 1, '2018-05-25', '2018-11-28'),
+(436, 'Bekatul', 131, 123, 2, '2018-10-05', '2018-10-31'),
+(437, 'Bekatul', 0, 122, 2, '2018-10-21', '2018-10-30'),
+(438, 'Jagung', 22, 124, 1, '2018-10-05', '2018-10-28');
 
 -- --------------------------------------------------------
 
@@ -195,7 +194,7 @@ CREATE TABLE `tb_suplier` (
   `nama_suplier` varchar(250) NOT NULL,
   `alamat_suplier` varchar(250) NOT NULL,
   `tlp_suplier` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_suplier`
@@ -219,17 +218,17 @@ CREATE TABLE `tb_telur` (
   `jml_telur` int(10) NOT NULL,
   `berat` float NOT NULL,
   `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_telur`
 --
 
 INSERT INTO `tb_telur` (`id_telur`, `id_karyawan`, `jml_telur`, `berat`, `tanggal`) VALUES
-(1, 1221, 5652, 6.2, '2025-06-05'),
-(3, 1223, 34, 4.3, '2025-06-07'),
-(4, 1221, 39, 4.1, '2025-07-20'),
-(5, 1224, 100, 3.8, '2025-10-30');
+(1, 1221, 5652, 6.2, '2018-06-05'),
+(3, 1223, 34, 4.3, '2018-06-07'),
+(4, 1221, 39, 4.1, '2018-07-20'),
+(5, 1224, 100, 3.8, '2018-10-30');
 
 -- --------------------------------------------------------
 
@@ -242,14 +241,14 @@ CREATE TABLE `tb_user` (
   `username` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `password` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `nama` varchar(200) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_user`
 --
 
 INSERT INTO `tb_user` (`id`, `username`, `password`, `nama`) VALUES
-(1, 'admin', 'a2960f70941d29b6123e6ebe493f38d2', 'Pak Ato');
+(1, 'admin', 'a2960f70941d29b6123e6ebe493f38d2', 'Pak Ato'),
 (2, 'admin1', 'd829b843a6550a947e82f2f38ed6b7a7', 'Pak Dani');
 
 -- --------------------------------------------------------
@@ -265,14 +264,14 @@ CREATE TABLE `ts_obat` (
   `jml_obat` int(10) NOT NULL,
   `tanggal` date NOT NULL,
   `deskripsi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `ts_obat`
 --
 
 INSERT INTO `ts_obat` (`kode_obat`, `id_obat`, `id_karyawan`, `jml_obat`, `tanggal`, `deskripsi`) VALUES
-(22, 138, 1222, 12, '2025-10-30', 'Untuk obat cacing');
+(22, 138, 1222, 12, '2018-10-30', 'Untuk obat cacing');
 
 -- --------------------------------------------------------
 
@@ -286,19 +285,19 @@ CREATE TABLE `ts_pakan` (
   `id_karyawan` int(11) NOT NULL,
   `jml_pakan` int(10) NOT NULL,
   `tanggal` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `ts_pakan`
 --
 
 INSERT INTO `ts_pakan` (`kode_pakan`, `id_pakan`, `id_karyawan`, `jml_pakan`, `tanggal`) VALUES
-(135, 424, 1223, 10, '2025-06-26'),
-(137, 424, 1221, 13, '2025-10-09'),
-(138, 436, 1221, 23, '2025-10-06'),
-(139, 428, 1223, 12, '2025-10-20'),
-(140, 424, 1222, 100, '2025-10-20'),
-(141, 437, 1224, 100, '2025-10-27');
+(135, 424, 1223, 10, '2018-06-26'),
+(137, 424, 1221, 13, '2018-10-09'),
+(138, 436, 1221, 23, '2018-10-06'),
+(139, 428, 1223, 12, '2018-10-20'),
+(140, 424, 1222, 100, '2018-10-20'),
+(141, 437, 1224, 100, '2018-10-27');
 
 -- --------------------------------------------------------
 
@@ -309,7 +308,7 @@ INSERT INTO `ts_pakan` (`kode_pakan`, `id_pakan`, `id_karyawan`, `jml_pakan`, `t
 CREATE TABLE `t_kategoriobat` (
   `id_kategori` int(11) NOT NULL,
   `nama_obat` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `t_kategoriobat`
@@ -331,7 +330,7 @@ INSERT INTO `t_kategoriobat` (`id_kategori`, `nama_obat`) VALUES
 CREATE TABLE `t_kategoripakan` (
   `id_kategori` int(11) NOT NULL,
   `nama_pakan` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `t_kategoripakan`
@@ -378,7 +377,7 @@ CREATE TABLE `view_pakan` (
 --
 DROP TABLE IF EXISTS `view_obat`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_obat`  AS  select `tb_obat`.`id_obat` AS `id_obat`,`tb_obat`.`nama_obat` AS `nama_obat`,sum((case when (`tb_obat`.`tgl_kadaluarsa` < curdate()) then `tb_obat`.`stok` else 0 end)) AS `kadaluarsa`,sum((case when (`tb_obat`.`tgl_kadaluarsa` > curdate()) then `tb_obat`.`stok` else 0 end)) AS `tersedia`,`tb_obat`.`id_kategori` AS `id_kategori`,`tb_obat`.`deskripsi` AS `deskripsi` from `tb_obat` group by `tb_obat`.`nama_obat` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_obat`  AS SELECT `tb_obat`.`id_obat` AS `id_obat`, `tb_obat`.`nama_obat` AS `nama_obat`, sum(case when `tb_obat`.`tgl_kadaluarsa` < curdate() then `tb_obat`.`stok` else 0 end) AS `kadaluarsa`, sum(case when `tb_obat`.`tgl_kadaluarsa` > curdate() then `tb_obat`.`stok` else 0 end) AS `tersedia`, `tb_obat`.`id_kategori` AS `id_kategori`, `tb_obat`.`deskripsi` AS `deskripsi` FROM `tb_obat` GROUP BY `tb_obat`.`nama_obat` ;
 
 -- --------------------------------------------------------
 
@@ -387,7 +386,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `view_pakan`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_pakan`  AS  select `tb_pakan`.`id_pakan` AS `id_pakan`,`tb_pakan`.`nama_pakan` AS `nama_pakan`,sum((case when (`tb_pakan`.`tgl_kadaluarsa` < curdate()) then `tb_pakan`.`stok` else 0 end)) AS `kadaluarsa`,sum((case when (`tb_pakan`.`tgl_kadaluarsa` > curdate()) then `tb_pakan`.`stok` else 0 end)) AS `tersedia`,`tb_pakan`.`id_kategori` AS `id_kategori` from `tb_pakan` group by `tb_pakan`.`nama_pakan` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_pakan`  AS SELECT `tb_pakan`.`id_pakan` AS `id_pakan`, `tb_pakan`.`nama_pakan` AS `nama_pakan`, sum(case when `tb_pakan`.`tgl_kadaluarsa` < curdate() then `tb_pakan`.`stok` else 0 end) AS `kadaluarsa`, sum(case when `tb_pakan`.`tgl_kadaluarsa` > curdate() then `tb_pakan`.`stok` else 0 end) AS `tersedia`, `tb_pakan`.`id_kategori` AS `id_kategori` FROM `tb_pakan` GROUP BY `tb_pakan`.`nama_pakan` ;
 
 --
 -- Indexes for dumped tables
@@ -487,66 +486,79 @@ ALTER TABLE `t_kategoripakan`
 --
 ALTER TABLE `jadwalku`
   MODIFY `jadwal_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `stok_obat`
 --
 ALTER TABLE `stok_obat`
   MODIFY `obat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `stok_pakan`
 --
 ALTER TABLE `stok_pakan`
   MODIFY `pakan_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `tb_karyawan`
 --
 ALTER TABLE `tb_karyawan`
   MODIFY `id_karyawan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1226;
+
 --
 -- AUTO_INCREMENT for table `tb_obat`
 --
 ALTER TABLE `tb_obat`
   MODIFY `id_obat` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+
 --
 -- AUTO_INCREMENT for table `tb_pakan`
 --
 ALTER TABLE `tb_pakan`
   MODIFY `id_pakan` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=439;
+
 --
 -- AUTO_INCREMENT for table `tb_suplier`
 --
 ALTER TABLE `tb_suplier`
   MODIFY `id_suplier` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+
 --
 -- AUTO_INCREMENT for table `tb_telur`
 --
 ALTER TABLE `tb_telur`
   MODIFY `id_telur` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `ts_obat`
 --
 ALTER TABLE `ts_obat`
   MODIFY `kode_obat` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
 --
 -- AUTO_INCREMENT for table `ts_pakan`
 --
 ALTER TABLE `ts_pakan`
   MODIFY `kode_pakan` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+
 --
 -- AUTO_INCREMENT for table `t_kategoriobat`
 --
 ALTER TABLE `t_kategoriobat`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `t_kategoripakan`
 --
 ALTER TABLE `t_kategoripakan`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- Constraints for dumped tables
 --
